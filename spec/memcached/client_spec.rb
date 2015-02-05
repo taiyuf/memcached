@@ -106,4 +106,5 @@ RSpec.describe Memcached::Client do
   it '.connect should be Dalli object' do
     expect(@c.connect).to be_kind_of(Dalli::Client)
   end
+
 end
