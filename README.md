@@ -8,7 +8,7 @@ Simple interface for memcached for ruby.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'memcached', '~> 0.0.2', github: 'taiyuf/ruby-memcached'
+gem 'memcached', '~> 0.0.3', github: 'taiyuf/ruby-memcached'
 ```
 
 ## Usage
