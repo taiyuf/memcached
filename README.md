@@ -1,6 +1,7 @@
 # Memcached
 
-TODO: Write a gem description
+Simple interface for memcached for ruby.
+'Dalli' required.
 
 ## Installation
 
@@ -20,7 +21,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'memcached'
+
+@cache = Memcached::Client.new( ... ).connect
+
+@cache.set('foo', 'bar')
+@cache.get('foo')    # => 'bar'
+@cache.delete('foo') # => nil
+```
+
+So, the connect method return the Dalli::Client object, you can
+use Dalli::Client method by instance.
+
+See https://github.com/mperham/dalli
 
 ## Contributing
 

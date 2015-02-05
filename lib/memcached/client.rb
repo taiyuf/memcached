@@ -18,18 +18,18 @@ module Memcached
       @@_servers    = []
       @@_options    = {}
       @@_connection = nil
+      self.servers  = [ '127.0.0.1:11211' ]
 
       if hash
         if hash.has_key?(:servers)
           self.servers = hash[:servers]
-        else
-          self.servers = ['127.0.0.1:11211']
         end
 
         %i{ namespace compress options }.each do |s|
           self.send(s, hash[s]) if hash.has_key?(s)
         end
       end
+
     end
 
     #===
@@ -136,7 +136,7 @@ module Memcached
     #
     def connect
 
-      @@_connection = Dalli::Client.new(@@_servers , @@_options) unless @@_connection
+      @@_connection = Dalli::Client.new(@@_servers.join(',') , @@_options) unless @@_connection
       @@_connection
 
     end
